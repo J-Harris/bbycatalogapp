@@ -79,10 +79,8 @@ var Products = {
 		$('li.productLink').on('click', null, function(event) {
 			console.log (this);
 			var sku = $(this).data('sku');
-			ProductDetail.initView (appConfig, '#productDetailTemplate', 'div#product_detail', sku);
+			$(document).trigger ('productClick', [ sku ]);
 		});
-
-
 	}
 }
 		

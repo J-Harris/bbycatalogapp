@@ -65,14 +65,12 @@ var Categories = {
 			}
 		);
 		
-		// wire up click events
+		// wire up click event
 		$('li.subCategoryLink').on('click', null, function(event) {
 			console.log (this);
 			var catid = $(this).data('catid');
-			Products.initView (appConfig, '#productsTemplate', 'div#products_list ul', catid);
-			$('div#product_detail').hide();
+			$(document).trigger ('categoryRefresh', [ catid ]);
 		});
-
 		
 		// trigger show the first product
 		$('li.subCategoryLink')[0].click();

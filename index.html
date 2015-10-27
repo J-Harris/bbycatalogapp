@@ -31,7 +31,7 @@
 	</li>
 </script>
 <script id="productsTemplate" type="x-tmpl-mustache">
-	<li class="productLink" data-sku="{{ sku }}" style="background-image: url({{ thumbnailImage }}); background-color:rgba(0, 0, 0, 0.5);">
+	<li class="productLink" data-sku="{{ sku }}">
 		{{ name }}
 	</li>
 </script>
@@ -52,8 +52,17 @@
 </script>
 
 <script>
-	Categories.initView (appConfig, '#subCategoriesTemplate', 'div#categories_list ul');
+    // decoupled components via .on() and .trigger() 
+    $(document).on('categoryRefresh', function (event, catid) {
+        Products.initView (appConfig, '#productsTemplate', 'div#products_list ul', catid);
+        $('div#product_detail').hide();
+    });
 
+    $(document).on('productClick', function (event, sku) {
+        ProductDetail.initView (appConfig, '#productDetailTemplate', 'div#product_detail', sku);
+    });
+
+	Categories.initView (appConfig, '#subCategoriesTemplate', 'div#categories_list ul');
 </script>
 <style>
 .selected {
