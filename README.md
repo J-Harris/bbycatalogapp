@@ -26,3 +26,5 @@ https://karma-runner.github.io/0.12/intro/installation.html
 http://jasmine.github.io/2.3/introduction.html
 
 
+$ cd /cygdrive/c/eclipse-kepler-workspace/noframework_bbycatalogapp/; karma start karma.conf.js
+

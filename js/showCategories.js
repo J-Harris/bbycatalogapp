@@ -36,7 +36,7 @@ var Categories = {
 			})
 			.done (function (categoryData) {
 			    if ( console && console.log ) {
-			    //    console.log( "Fetch of Live categoryData:", categoryData );
+			    	console.log( "done Fetch of Live categoryData:", categoryData );
 			    }
 				console.log ('retrieved subCategories from live URL: ', categoryData.subCategories.length)
 			    
@@ -53,7 +53,6 @@ var Categories = {
 				throw { name: 'Fetch Error', message: 'failed to fetch from: ' + this.url }
 			});
 		}
-
 	},
 	
 	showSubCategories: function (templateId, targetUL) {
