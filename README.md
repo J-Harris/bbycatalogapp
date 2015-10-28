@@ -23,4 +23,6 @@ C:\eclipse-kepler-workspace\noframework_bbycatalogapp\css>sass --watch bbycatalo
 
 https://karma-runner.github.io/0.12/intro/installation.html
 
+http://jasmine.github.io/2.3/introduction.html
+
 
